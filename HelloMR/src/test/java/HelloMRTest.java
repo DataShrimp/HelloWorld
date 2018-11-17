@@ -9,6 +9,9 @@ public class HelloMRTest {
 
     @Test
     public void test() throws Exception {
+        // Windows运行MR，下载winutils hadoop已编译文件，并拷贝其中hadoop.dll到windows/system32目录下
+        // 设置HADOOP_HOME变量（即winutils对应版本目录），或程序中设置一下变量
+        System.setProperty("hadoop.home.dir","D:\\hadoop-2.7.1" );
         Configuration conf = new Configuration();
         conf.set("fs.defaultFS", "file:///");
         conf.set("mapreduce.framework.name", "local");
